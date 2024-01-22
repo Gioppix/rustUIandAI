@@ -17,8 +17,8 @@ use bevy::prelude::Transform;
 const FACTOR :f32 = 16.0;
 
 // Fine tuded by hand to rowk on a 30x30 world
-const TRANSLATE_Y : f32 = -7.6;
-const TRANSLATE_X : f32 = -7.6;
+const TRANSLATE_Y : f32 = -7.973;
+const TRANSLATE_X : f32 = -7.973;
 
 
 // This is a system

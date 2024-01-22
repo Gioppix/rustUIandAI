@@ -40,7 +40,7 @@ use std::thread;
 use std::sync::Mutex;
 use crate::AI::training::generate_generator;
 
-const WORLD_SIZE : usize = 40;
+const WORLD_SIZE : usize = 300;
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
 pub enum AppState {

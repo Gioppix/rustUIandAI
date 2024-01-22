@@ -25,6 +25,7 @@ use std::time::Instant;
 use op_map::op_pathfinding::OpActionInput::Destroy;
 use rand::distributions::WeightedIndex;
 use worldgen_unwrap::public::WorldgeneratorUnwrap;
+use crate::WORLD_SIZE;
 
 pub fn train(gen_size: u32) -> Network {
     println!("Started training");
@@ -292,8 +293,8 @@ pub fn generate_generator(seed: u64) -> impl Generator {
         .alter_content_option(Content::Garbage(0), OxAgContentOptions {
             in_batches: true,
             is_present: true,
-            max_radius: 4,
-            max_spawn_number: 200,
+            max_radius: 5,
+            max_spawn_number: 500,
             min_spawn_number: 50,
             percentage: 0.1,
             with_max_spawn_number: false,
@@ -301,13 +302,22 @@ pub fn generate_generator(seed: u64) -> impl Generator {
         .alter_content_option(Content::Bin(0..0), OxAgContentOptions {
             in_batches: false,
             is_present: true,
-            max_radius: 4,
+            max_radius: 1,
             max_spawn_number: 50,
             min_spawn_number: 10,
-            percentage: 0.05,
+            percentage: 0.10,
             with_max_spawn_number: false,
         }).unwrap()
-        .set_size(40)
+        .alter_content_option(Content::Water(0), OxAgContentOptions {
+            in_batches: false,
+            is_present: true,
+            max_radius: 5,
+            max_spawn_number: 50,
+            min_spawn_number: 10,
+            percentage: 0.03,
+            with_max_spawn_number: false,
+        }).unwrap()
+        .set_size(WORLD_SIZE)
         .set_with_info(false)
         .build()
         .unwrap();
