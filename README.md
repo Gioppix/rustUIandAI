@@ -4,6 +4,22 @@
 ![screen2](./assets/screenshots/screen2.png)
 ![screen3](./assets/screenshots/screen3.png)
 
+# Keys
+
+- 'w / up_arrow' move up 
+- 's / down_arrow' move down 
+- 'a / left_arrow' move left 
+- 'd / right_arrow' move right 
+- 'f' lock camera to player 
+- 'p' pause game 
+- 'o' unpause game
+- 'z' double speed 
+- 'x' normal speed 
+- '-' zoom out camera 
+- '+' zoom in camera
+- 'esc' close game 
+
+
 ### Features
 
 - [x] Slower tick
