@@ -26,7 +26,6 @@ use op_map::op_pathfinding::OpActionInput::Destroy;
 use rand::distributions::WeightedIndex;
 use worldgen_unwrap::public::WorldgeneratorUnwrap;
 
-
 pub fn train(gen_size: u32) -> Network {
     println!("Started training");
     //return generator.gen();
@@ -61,11 +60,11 @@ pub fn train(gen_size: u32) -> Network {
                         mem::transmute::<&Box<dyn Runnable>, &Box<TrainingRobot>>(robot)
                     };
                     let score = training_robot.get_score();
+                    // let score = get_score(runner.)
 
 
                     return (score, training_robot.get_cloned_brain());
                     // return (-1.99983, Brain::default());
-
                 });
                 handles.push(h);
             }
@@ -211,32 +210,47 @@ impl Brain {
             network
         }
     }
-    pub(crate) fn think_action(&self, world: &World, robot: &impl Runnable) -> Option<OpActionOutput> {
+    pub fn think_action(&self, world: &World, robot: &impl Runnable) -> Option<OpActionOutput> {
         let maybe_garbage_in_invetory = robot.get_backpack().get_contents().get(&Content::Garbage(0).to_default());
         let garbage_in_invetory = *maybe_garbage_in_invetory.unwrap_or(&0);
         let energy = robot.get_energy().get_energy_level();
 
         let mut s = ShoppingList::new(vec![(Content::Garbage(1), Some(OpActionInput::Destroy()))]);
         let a = get_best_action_to_element(robot, world, &mut s);
-        let is_there_garbage = if a.is_none() { 1 } else { 0 } as f32;
+        let is_there_garbage = a.is_some();
 
         let mut s = ShoppingList::new(vec![(Content::Bin(0..0), Some(OpActionInput::Put(Content::Garbage(1), 1)))]);
         let a = get_best_action_to_element(robot, world, &mut s);
-        let is_there_bin = if a.is_none() { 1 } else { 0 } as f32;
+        let is_there_bin = a.is_some();
 
-        let is_inv_full = if robot.get_backpack().get_size() - robot.get_backpack().get_contents().values().sum::<usize>() == 0 { 1 } else { 0 } as f32;
+        let is_inv_full = robot.get_backpack().get_size() - robot.get_backpack().get_contents().values().sum::<usize>() == 0;
 
 
-        let res = self.network.propagate(vec![is_inv_full, is_there_garbage, is_there_bin]);
+        // let res = self.network.propagate(vec![is_inv_full, is_there_garbage, is_there_bin]);
 
-        let shifted_values: Vec<f32> = res.iter().map(|&x| x + 1.0).collect();
-        let dist = WeightedIndex::new(&shifted_values).unwrap();
-        let mut rng = rand::thread_rng();
-        let mut random_index = rng.sample(dist);
+        // let shifted_values: Vec<f32> = res.iter().map(|&x| x + 1.0).collect();
+        // let dist = WeightedIndex::new(&shifted_values).unwrap();
+        // let mut rng = rand::thread_rng();
+        // let mut random_index = rng.sample(dist);
+        //
+        // // Return action based on the random index
+        // if is_inv_full > 0.1 && is_there_bin < 0.1 { random_index = 2 }
 
-        // Return action based on the random index
-        if is_inv_full > 0.1 && is_there_bin < 0.1 { random_index = 2 }
-        random_index = 2;
+
+        let random_index = if is_inv_full {
+            if is_there_bin {
+                1
+            } else {
+                2
+            }
+        } else {
+            if is_there_garbage {
+                0
+            } else {
+                2
+            }
+        };
+
         let brain_action = match random_index {
             0 => GetContent(Content::Garbage(1)),
             1 => PutContent(Content::Bin(0..0), Content::Garbage(1)),

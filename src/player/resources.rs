@@ -45,7 +45,6 @@ pub struct MyRobot(pub Robot, pub Mutex<Sender<((Vec<Vec<Option<Tile>>>, (usize,
 
 impl MyRobot {
     pub(crate) fn new(r: Robot, m: Mutex<Sender<((Vec<Vec<Option<Tile>>>, (usize, usize)), EnvironmentalConditions, f32)>>) -> Self {
-        let net = train(5);
         // Self(r, m, Brain::from_network(net))
         Self(r, m, Brain::default())
     }
@@ -53,8 +52,8 @@ impl MyRobot {
 
 impl Runnable for MyRobot {
     fn process_tick(&mut self, world: &mut World) {
-        println!("Tick nel roboto vero");
-        let niugy = robot_map(world).expect("Errore nella mappa");
+        // println!("Tick nel roboto vero");
+        // let niugy = robot_map(world).expect("Errore nella mappa");
 
         let brain_action = self.2.think_action(world, self);
 
@@ -77,7 +76,7 @@ impl Runnable for MyRobot {
     }
 
     fn handle_event(&mut self, event: Event) {
-        //println!("{:?}", event);
+        // println!("{:?}", event);
     }
 
     fn get_energy(&self) -> &Energy {
