@@ -1,0 +1,1006 @@
+   Compiling UI_rust v0.1.0 (/home/santo/Documents/UI_rust)
+error[E0583]: file not found for module `accessibility`
+  --> src/winit/lib.rs:10:1
+   |
+10 | pub mod accessibility;
+   | ^^^^^^^^^^^^^^^^^^^^^^
+   |
+   = help: to create the module `accessibility`, create file "src/winit/lib/accessibility.rs" or "src/winit/lib/accessibility/mod.rs"
+
+error[E0583]: file not found for module `converters`
+  --> src/winit/lib.rs:11:1
+   |
+11 | mod converters;
+   | ^^^^^^^^^^^^^^^
+   |
+   = help: to create the module `converters`, create file "src/winit/lib/converters.rs" or "src/winit/lib/converters/mod.rs"
+
+error[E0583]: file not found for module `system`
+  --> src/winit/lib.rs:12:1
+   |
+12 | mod system;
+   | ^^^^^^^^^^^
+   |
+   = help: to create the module `system`, create file "src/winit/lib/system.rs" or "src/winit/lib/system/mod.rs"
+
+error[E0583]: file not found for module `winit_config`
+  --> src/winit/lib.rs:15:1
+   |
+15 | mod winit_config;
+   | ^^^^^^^^^^^^^^^^^
+   |
+   = help: to create the module `winit_config`, create file "src/winit/lib/winit_config.rs" or "src/winit/lib/winit_config/mod.rs"
+
+error[E0583]: file not found for module `winit_windows`
+  --> src/winit/lib.rs:16:1
+   |
+16 | mod winit_windows;
+   | ^^^^^^^^^^^^^^^^^^
+   |
+   = help: to create the module `winit_windows`, create file "src/winit/lib/winit_windows.rs" or "src/winit/lib/winit_windows/mod.rs"
+
+error[E0432]: unresolved imports `system::changed_windows`, `system::create_windows`, `system::despawn_windows`, `system::CachedWindow`
+  --> src/winit/lib.rs:19:14
+   |
+19 | use system::{changed_windows, create_windows, despawn_windows, CachedWindow};
+   |              ^^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^  ^^^^^^^^^^^^^^^  ^^^^^^^^^^^^ no `CachedWindow` in `winit::lib::system`
+   |              |                |               |
+   |              |                |               no `despawn_windows` in `winit::lib::system`
+   |              |                no `create_windows` in `winit::lib::system`
+   |              no `changed_windows` in `winit::lib::system`
+
+error[E0432]: unresolved import `crate::accessibility`
+  --> src/winit/lib.rs:57:12
+   |
+57 | use crate::accessibility::{AccessKitAdapters, AccessibilityPlugin, WinitActionHandlers};
+   |            ^^^^^^^^^^^^^
+   |            |
+   |            unresolved import
+   |            help: a similar path exists: `bevy::winit::accessibility`
+
+error[E0432]: unresolved import `crate::converters`
+  --> src/winit/lib.rs:59:12
+   |
+59 | use crate::converters::convert_winit_theme;
+   |            ^^^^^^^^^^ could not find `converters` in the crate root
+
+error[E0433]: failed to resolve: use of undeclared crate or module `bevy_ecs`
+  --> src/winit/lib.rs:25:5
+   |
+25 | use bevy_ecs::prelude::*;
+   |     ^^^^^^^^ use of undeclared crate or module `bevy_ecs`
+
+error[E0432]: unresolved import `winit::WinitPlugin`
+  --> src/main.rs:24:5
+   |
+24 | use winit::WinitPlugin;
+   |     ^^^^^^^^^^^^^^^^^^ no `WinitPlugin` in `winit`
+   |
+help: consider importing one of these items instead
+   |
+24 | use bevy::winit::WinitPlugin;
+   |     ~~~~~~~~~~~~~~~~~~~~~~~~
+24 | use crate::winit::lib::WinitPlugin;
+   |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+error[E0432]: unresolved import `bevy_a11y`
+  --> src/winit/lib.rs:18:5
+   |
+18 | use bevy_a11y::AccessibilityRequested;
+   |     ^^^^^^^^^ use of undeclared crate or module `bevy_a11y`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `bevy_ecs`
+  --> src/winit/lib.rs:24:5
+   |
+24 | use bevy_ecs::event::{Events, ManualEventReader};
+   |     ^^^^^^^^ use of undeclared crate or module `bevy_ecs`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `bevy_ecs`
+  --> src/winit/lib.rs:26:5
+   |
+26 | use bevy_ecs::system::{SystemParam, SystemState};
+   |     ^^^^^^^^ use of undeclared crate or module `bevy_ecs`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `bevy_input`
+  --> src/winit/lib.rs:27:5
+   |
+27 | use bevy_input::{
+   |     ^^^^^^^^^^ use of undeclared crate or module `bevy_input`
+
+error[E0432]: unresolved import `bevy_app`
+  --> src/winit/lib.rs:23:5
+   |
+23 | use bevy_app::{App, AppExit, Last, Plugin, PluginsState};
+   |     ^^^^^^^^ use of undeclared crate or module `bevy_app`
+
+error[E0432]: unresolved import `bevy_math`
+  --> src/winit/lib.rs:33:5
+   |
+33 | use bevy_math::{ivec2, DVec2, Vec2};
+   |     ^^^^^^^^^ use of undeclared crate or module `bevy_math`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `bevy_utils`
+  --> src/winit/lib.rs:36:5
+   |
+36 | use bevy_utils::{
+   |     ^^^^^^^^^^ use of undeclared crate or module `bevy_utils`
+
+error[E0432]: unresolved import `bevy_tasks`
+  --> src/winit/lib.rs:35:5
+   |
+35 | use bevy_tasks::tick_global_task_pools_on_main_thread;
+   |     ^^^^^^^^^^ use of undeclared crate or module `bevy_tasks`
+
+error[E0432]: unresolved import `bevy_utils`
+  --> src/winit/lib.rs:36:5
+   |
+36 | use bevy_utils::{
+   |     ^^^^^^^^^^ use of undeclared crate or module `bevy_utils`
+
+error[E0432]: unresolved import `bevy_window`
+  --> src/winit/lib.rs:40:5
+   |
+40 | use bevy_window::{
+   |     ^^^^^^^^^^^ use of undeclared crate or module `bevy_window`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `winit`
+  --> src/winit/lib.rs:52:5
+   |
+52 | use winit::{
+   |     ^^^^^ use of undeclared crate or module `winit`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `winit`
+   --> src/winit/lib.rs:251:9
+    |
+251 |     use winit::platform::run_return::EventLoopExtRunReturn;
+    |         ^^^^^ use of undeclared crate or module `winit`
+
+error[E0432]: unresolved import `winit`
+  --> src/winit/lib.rs:52:5
+   |
+52 | use winit::{
+   |     ^^^^^ help: a similar path exists: `crate::winit`
+   |
+   = note: `use` statements changed in Rust 2018; read more at <https://doc.rust-lang.org/edition-guide/rust-2018/module-system/path-clarity.html>
+
+error[E0433]: failed to resolve: use of undeclared crate or module `approx`
+   --> src/winit/lib.rs:631:35
+    |
+631 |                         } else if approx::relative_ne!(new_factor, prior_factor) {
+    |                                   ^^^^^^ use of undeclared crate or module `approx`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `approx`
+   --> src/winit/lib.rs:642:28
+    |
+642 |                         if approx::relative_ne!(window.width(), new_logical_width)
+    |                            ^^^^^^ use of undeclared crate or module `approx`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `approx`
+   --> src/winit/lib.rs:643:32
+    |
+643 | ...                   || approx::relative_ne!(window.height(), new_logical_height)
+    |                          ^^^^^^ use of undeclared crate or module `approx`
+
+error: cannot determine resolution for the derive macro `SystemParam`
+   --> src/winit/lib.rs:271:10
+    |
+271 | #[derive(SystemParam)]
+    |          ^^^^^^^^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error: cannot determine resolution for the macro `warn`
+   --> src/winit/lib.rs:489:21
+    |
+489 |                     warn!(
+    |                     ^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error: cannot determine resolution for the macro `warn`
+   --> src/winit/lib.rs:497:21
+    |
+497 |                     warn!(
+    |                     ^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error: cannot determine resolution for the macro `trace`
+   --> src/winit/lib.rs:916:5
+    |
+916 |     trace!("starting winit event loop");
+    |     ^^^^^
+    |
+    = note: import resolution is stuck, try simplifying macro imports
+
+error[E0433]: failed to resolve: use of undeclared crate or module `winit`
+   --> src/winit/lib.rs:629:33
+    |
+629 | ...                   winit::dpi::LogicalSize::new(window.width(), window.height())
+    |                       ^^^^^ use of undeclared crate or module `winit`
+
+error[E0412]: cannot find type `WinitWindows` in this scope
+   --> src/winit/lib.rs:131:38
+    |
+131 |         app.init_non_send_resource::<WinitWindows>()
+    |                                      ^^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing this struct
+    |
+18  + use bevy::winit::WinitWindows;
+    |
+
+error[E0412]: cannot find type `WinitSettings` in this scope
+   --> src/winit/lib.rs:132:30
+    |
+132 |             .init_resource::<WinitSettings>()
+    |                              ^^^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing this struct
+    |
+18  + use bevy::winit::WinitSettings;
+    |
+
+error[E0412]: cannot find type `Commands` in this scope
+   --> src/winit/lib.rs:165:17
+    |
+165 |                 Commands,
+    |                 ^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::Commands;
+    |
+18  + use crate::Commands;
+    |
+
+error[E0412]: cannot find type `Query` in this scope
+   --> src/winit/lib.rs:166:17
+    |
+166 |                 Query<(Entity, &mut Window)>,
+    |                 ^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::Query;
+    |
+18  + use crate::Query;
+    |
+
+error[E0412]: cannot find type `Entity` in this scope
+   --> src/winit/lib.rs:166:24
+    |
+166 |                 Query<(Entity, &mut Window)>,
+    |                        ^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::entity::Entity;
+    |
+18  + use crate::Entity;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:167:17
+    |
+167 |                 EventWriter<WindowCreated>,
+    |                 ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `NonSendMut` in this scope
+   --> src/winit/lib.rs:168:17
+    |
+168 |                 NonSendMut<WinitWindows>,
+    |                 ^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::NonSendMut;
+    |
+18  + use crate::NonSendMut;
+    |
+
+error[E0412]: cannot find type `WinitWindows` in this scope
+   --> src/winit/lib.rs:168:28
+    |
+168 |                 NonSendMut<WinitWindows>,
+    |                            ^^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing this struct
+    |
+18  + use bevy::winit::WinitWindows;
+    |
+
+error[E0412]: cannot find type `NonSendMut` in this scope
+   --> src/winit/lib.rs:169:17
+    |
+169 |                 NonSendMut<AccessKitAdapters>,
+    |                 ^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::NonSendMut;
+    |
+18  + use crate::NonSendMut;
+    |
+
+error[E0412]: cannot find type `ResMut` in this scope
+   --> src/winit/lib.rs:170:17
+    |
+170 |                 ResMut<WinitActionHandlers>,
+    |                 ^^^^^^
+   --> /rustc/a28077b28a02b92985b3a3faecf92813155f1ea1/library/core/src/convert/mod.rs:368:1
+    |
+    = note: similarly named trait `AsMut` defined here
+    |
+help: a trait with a similar name exists
+    |
+170 |                 AsMut<WinitActionHandlers>,
+    |                 ~~~~~
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::ResMut;
+    |
+18  + use crate::ResMut;
+    |
+
+error[E0412]: cannot find type `ResMut` in this scope
+   --> src/winit/lib.rs:171:17
+    |
+171 |                 ResMut<AccessibilityRequested>,
+    |                 ^^^^^^
+   --> /rustc/a28077b28a02b92985b3a3faecf92813155f1ea1/library/core/src/convert/mod.rs:368:1
+    |
+    = note: similarly named trait `AsMut` defined here
+    |
+help: a trait with a similar name exists
+    |
+171 |                 AsMut<AccessibilityRequested>,
+    |                 ~~~~~
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::ResMut;
+    |
+18  + use crate::ResMut;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:274:21
+    |
+274 |     window_resized: EventWriter<'w, WindowResized>,
+    |                     ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:275:29
+    |
+275 |     window_close_requested: EventWriter<'w, WindowCloseRequested>,
+    |                             ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:276:34
+    |
+276 |     window_scale_factor_changed: EventWriter<'w, WindowScaleFactorChanged>,
+    |                                  ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:277:42
+    |
+277 |     window_backend_scale_factor_changed: EventWriter<'w, WindowBackendScaleFactorChanged>,
+    |                                          ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:278:21
+    |
+278 |     window_focused: EventWriter<'w, WindowFocused>,
+    |                     ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:279:19
+    |
+279 |     window_moved: EventWriter<'w, WindowMoved>,
+    |                   ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:280:27
+    |
+280 |     window_theme_changed: EventWriter<'w, WindowThemeChanged>,
+    |                           ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:281:23
+    |
+281 |     window_destroyed: EventWriter<'w, WindowDestroyed>,
+    |                       ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:282:15
+    |
+282 |     lifetime: EventWriter<'w, ApplicationLifetime>,
+    |               ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:283:21
+    |
+283 |     keyboard_input: EventWriter<'w, KeyboardInput>,
+    |                     ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:284:22
+    |
+284 |     character_input: EventWriter<'w, ReceivedCharacter>,
+    |                      ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:285:25
+    |
+285 |     mouse_button_input: EventWriter<'w, MouseButtonInput>,
+    |                         ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:286:29
+    |
+286 |     touchpad_magnify_input: EventWriter<'w, TouchpadMagnify>,
+    |                             ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:287:28
+    |
+287 |     touchpad_rotate_input: EventWriter<'w, TouchpadRotate>,
+    |                            ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:288:24
+    |
+288 |     mouse_wheel_input: EventWriter<'w, MouseWheel>,
+    |                        ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:289:18
+    |
+289 |     touch_input: EventWriter<'w, TouchInput>,
+    |                  ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:290:16
+    |
+290 |     ime_input: EventWriter<'w, Ime>,
+    |                ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:291:25
+    |
+291 |     file_drag_and_drop: EventWriter<'w, FileDragAndDrop>,
+    |                         ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:292:19
+    |
+292 |     cursor_moved: EventWriter<'w, CursorMoved>,
+    |                   ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:293:21
+    |
+293 |     cursor_entered: EventWriter<'w, CursorEntered>,
+    |                     ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:294:18
+    |
+294 |     cursor_left: EventWriter<'w, CursorLeft>,
+    |                  ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:296:19
+    |
+296 |     mouse_motion: EventWriter<'w, MouseMotion>,
+    |                   ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `WinitSettings` in this scope
+   --> src/winit/lib.rs:362:48
+    |
+362 |     let return_from_run = app.world.resource::<WinitSettings>().return_from_run;
+    |                                                ^^^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing this struct
+    |
+18  + use bevy::winit::WinitSettings;
+    |
+
+error[E0412]: cannot find type `Res` in this scope
+   --> src/winit/lib.rs:373:49
+    |
+373 |     let mut focused_windows_state: SystemState<(Res<WinitSettings>, Query<&Window>)> =
+    |                                                 ^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::Res;
+    |
+18  + use crate::Res;
+    |
+
+error[E0412]: cannot find type `WinitSettings` in this scope
+   --> src/winit/lib.rs:373:53
+    |
+373 |     let mut focused_windows_state: SystemState<(Res<WinitSettings>, Query<&Window>)> =
+    |                                                     ^^^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing this struct
+    |
+18  + use bevy::winit::WinitSettings;
+    |
+
+error[E0412]: cannot find type `Query` in this scope
+   --> src/winit/lib.rs:373:69
+    |
+373 |     let mut focused_windows_state: SystemState<(Res<WinitSettings>, Query<&Window>)> =
+    |                                                                     ^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::Query;
+    |
+18  + use crate::Query;
+    |
+
+error[E0412]: cannot find type `NonSend` in this scope
+   --> src/winit/lib.rs:378:9
+    |
+378 |         NonSend<WinitWindows>,
+    |         ^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::NonSend;
+    |
+18  + use crate::NonSend;
+    |
+
+error[E0412]: cannot find type `WinitWindows` in this scope
+   --> src/winit/lib.rs:378:17
+    |
+378 |         NonSend<WinitWindows>,
+    |                 ^^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing this struct
+    |
+18  + use bevy::winit::WinitWindows;
+    |
+
+error[E0412]: cannot find type `Query` in this scope
+   --> src/winit/lib.rs:379:9
+    |
+379 |         Query<(&mut Window, &mut CachedWindow)>,
+    |         ^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::Query;
+    |
+18  + use crate::Query;
+    |
+
+error[E0412]: cannot find type `NonSend` in this scope
+   --> src/winit/lib.rs:380:9
+    |
+380 |         NonSend<AccessKitAdapters>,
+    |         ^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::NonSend;
+    |
+18  + use crate::NonSend;
+    |
+
+error[E0412]: cannot find type `Commands` in this scope
+   --> src/winit/lib.rs:385:9
+    |
+385 |         Commands,
+    |         ^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::Commands;
+    |
+18  + use crate::Commands;
+    |
+
+error[E0412]: cannot find type `Query` in this scope
+   --> src/winit/lib.rs:386:9
+    |
+386 |         Query<(Entity, &mut Window), Added<Window>>,
+    |         ^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::Query;
+    |
+18  + use crate::Query;
+    |
+
+error[E0412]: cannot find type `Entity` in this scope
+   --> src/winit/lib.rs:386:16
+    |
+386 |         Query<(Entity, &mut Window), Added<Window>>,
+    |                ^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::entity::Entity;
+    |
+18  + use crate::Entity;
+    |
+
+error[E0412]: cannot find type `Added` in this scope
+   --> src/winit/lib.rs:386:38
+    |
+386 |         Query<(Entity, &mut Window), Added<Window>>,
+    |                                      ^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::query::Added;
+    |
+18  + use crate::Added;
+    |
+
+error[E0412]: cannot find type `EventWriter` in this scope
+   --> src/winit/lib.rs:387:9
+    |
+387 |         EventWriter<WindowCreated>,
+    |         ^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::event::EventWriter;
+    |
+18  + use crate::EventWriter;
+    |
+
+error[E0412]: cannot find type `NonSendMut` in this scope
+   --> src/winit/lib.rs:388:9
+    |
+388 |         NonSendMut<WinitWindows>,
+    |         ^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::NonSendMut;
+    |
+18  + use crate::NonSendMut;
+    |
+
+error[E0412]: cannot find type `WinitWindows` in this scope
+   --> src/winit/lib.rs:388:20
+    |
+388 |         NonSendMut<WinitWindows>,
+    |                    ^^^^^^^^^^^^ not found in this scope
+    |
+help: consider importing this struct
+    |
+18  + use bevy::winit::WinitWindows;
+    |
+
+error[E0412]: cannot find type `NonSendMut` in this scope
+   --> src/winit/lib.rs:389:9
+    |
+389 |         NonSendMut<AccessKitAdapters>,
+    |         ^^^^^^^^^^ not found in this scope
+    |
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::NonSendMut;
+    |
+18  + use crate::NonSendMut;
+    |
+
+error[E0412]: cannot find type `ResMut` in this scope
+   --> src/winit/lib.rs:390:9
+    |
+390 |         ResMut<WinitActionHandlers>,
+    |         ^^^^^^
+   --> /rustc/a28077b28a02b92985b3a3faecf92813155f1ea1/library/core/src/convert/mod.rs:368:1
+    |
+    = note: similarly named trait `AsMut` defined here
+    |
+help: a trait with a similar name exists
+    |
+390 |         AsMut<WinitActionHandlers>,
+    |         ~~~~~
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::ResMut;
+    |
+18  + use crate::ResMut;
+    |
+
+error[E0412]: cannot find type `ResMut` in this scope
+   --> src/winit/lib.rs:391:9
+    |
+391 |         ResMut<AccessibilityRequested>,
+    |         ^^^^^^
+   --> /rustc/a28077b28a02b92985b3a3faecf92813155f1ea1/library/core/src/convert/mod.rs:368:1
+    |
+    = note: similarly named trait `AsMut` defined here
+    |
+help: a trait with a similar name exists
+    |
+391 |         AsMut<AccessibilityRequested>,
+    |         ~~~~~
+help: consider importing one of these items
+    |
+18  + use bevy::ecs::system::ResMut;
+    |
+18  + use crate::ResMut;
+    |
+
+error[E0425]: cannot find function `convert_keyboard_input` in module `converters`
+   --> src/winit/lib.rs:540:47
+    |
+540 | ...                   .send(converters::convert_keyboard_input(input, window_entity));
+    |                                         ^^^^^^^^^^^^^^^^^^^^^^ not found in `converters`
+
+error[E0425]: cannot find function `convert_mouse_button` in module `converters`
+   --> src/winit/lib.rs:564:49
+    |
+564 | ...                   button: converters::convert_mouse_button(button),
+    |                                           ^^^^^^^^^^^^^^^^^^^^ not found in `converters`
+
+error[E0425]: cannot find function `convert_element_state` in module `converters`
+   --> src/winit/lib.rs:565:48
+    |
+565 | ...                   state: converters::convert_element_state(state),
+    |                                          ^^^^^^^^^^^^^^^^^^^^^ not found in `converters`
+
+error[E0425]: cannot find function `convert_touch_input` in module `converters`
+   --> src/winit/lib.rs:601:47
+    |
+601 | ...                   .send(converters::convert_touch_input(touch, location));
+    |                                         ^^^^^^^^^^^^^^^^^^^ not found in `converters`
+
+error[E0433]: failed to resolve: use of undeclared type `UpdateMode`
+   --> src/winit/lib.rs:815:25
+    |
+815 |                         UpdateMode::Continuous | UpdateMode::Reactive { .. } => {
+    |                         ^^^^^^^^^^ use of undeclared type `UpdateMode`
+    |
+help: consider importing this enum
+    |
+18  + use bevy::winit::UpdateMode;
+    |
+
+error[E0433]: failed to resolve: use of undeclared type `UpdateMode`
+   --> src/winit/lib.rs:815:50
+    |
+815 |                         UpdateMode::Continuous | UpdateMode::Reactive { .. } => {
+    |                                                  ^^^^^^^^^^ use of undeclared type `UpdateMode`
+    |
+help: consider importing this enum
+    |
+18  + use bevy::winit::UpdateMode;
+    |
+
+error[E0433]: failed to resolve: use of undeclared type `UpdateMode`
+   --> src/winit/lib.rs:822:25
+    |
+822 |                         UpdateMode::ReactiveLowPower { .. } => {
+    |                         ^^^^^^^^^^ use of undeclared type `UpdateMode`
+    |
+help: consider importing this enum
+    |
+18  + use bevy::winit::UpdateMode;
+    |
+
+error[E0433]: failed to resolve: use of undeclared type `UpdateMode`
+   --> src/winit/lib.rs:842:29
+    |
+842 | ...                   UpdateMode::Continuous => *control_flow = ControlFlow::Poll,
+    |                       ^^^^^^^^^^ use of undeclared type `UpdateMode`
+    |
+help: consider importing this enum
+    |
+18  + use bevy::winit::UpdateMode;
+    |
+
+error[E0433]: failed to resolve: use of undeclared type `UpdateMode`
+   --> src/winit/lib.rs:843:29
+    |
+843 | ...                   UpdateMode::Reactive { wait }
+    |                       ^^^^^^^^^^ use of undeclared type `UpdateMode`
+    |
+help: consider importing this enum
+    |
+18  + use bevy::winit::UpdateMode;
+    |
+
+error[E0433]: failed to resolve: use of undeclared type `UpdateMode`
+   --> src/winit/lib.rs:844:31
+    |
+844 | ...                   | UpdateMode::ReactiveLowPower { wait } => {
+    |                         ^^^^^^^^^^ use of undeclared type `UpdateMode`
+    |
+help: consider importing this enum
+    |
+18  + use bevy::winit::UpdateMode;
+    |
+
+error[E0659]: `warn` is ambiguous
+  --> src/winit/lib.rs:2:4
+   |
+2  | #![warn(missing_docs)]
+   |    ^^^^ ambiguous name
+   |
+   = note: ambiguous because of a name conflict with a builtin attribute
+   = note: `warn` could refer to a built-in attribute
+note: `warn` could also refer to the unresolved item imported here
+  --> src/winit/lib.rs:37:22
+   |
+37 |     tracing::{trace, warn},
+   |                      ^^^^
+   = help: use `self::warn` to refer to this unresolved item unambiguously
+
+Some errors have detailed explanations: E0412, E0425, E0432, E0433, E0583, E0659.
+For more information about an error, try `rustc --explain E0412`.
+error: could not compile `UI_rust` (bin "UI_rust") due to 93 previous errors

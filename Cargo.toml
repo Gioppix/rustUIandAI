@@ -1,0 +1,52 @@
+[package]
+name = "UI_rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# Enable max optimizations for dependencies, but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+
+[dependencies]
+robotics_lib = { version = "0.1.21", registry = "kellnr" }
+op_map = { version = "1.0.5", registry = "kellnr" }
+oxagworldgenerator = { version = "0.1.2", registry = "kellnr" }
+worldgen_unwrap = { version = "0.1.2", registry = "kellnr" }
+rust_eze_spotlight = { version = "1.0.1", registry = "kellnr" }
+#oxagworldgenerator = { version = "0.1.2", registry = "kellnr" }
+#oxagworldgenerator = { version = "0.1.2", registry = "kellnr" }
+bevy_ecs_tilemap = "0.11.1"
+rand = "0.8.5"
+bevy = { version = "0.11.3", features = [
+    "animation",
+    #    "bevy_audio",
+    "bevy_asset",
+    "bevy_gilrs",
+    "bevy_scene",
+    "bevy_winit",
+    "bevy_core_pipeline",
+    "bevy_pbr",
+    "bevy_gltf",
+    "bevy_render",
+    "bevy_sprite",
+    "bevy_text",
+    "bevy_ui",
+    "multi-threaded",
+    "png",
+    "hdr",
+    "ktx2",
+    "zstd",
+    "vorbis",
+    "x11",
+    "filesystem_watcher",
+    "bevy_gizmos",
+    "android_shared_stdcxx",
+    "tonemapping_luts",
+    "default_font",
+    "webgl2",
+] }
+bevy_kira_audio = { version = "0.17.0", features = ["ogg", "mp3"] }
+
